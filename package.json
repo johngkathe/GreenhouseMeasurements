@@ -1,12 +1,12 @@
 {
   "name": "greenhouse-measurements",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "A basic application that collects and stores greenhouse data in a Mongo databases.",
   "main": "index.js",
   "scripts": {
     "devEnv": "cross-env NODE_ENV=development PORT=3839 node index.js",
-    "testEnv": "cross-env NODE_ENV=test PORT=3839 node index.js",
-    "prodEnv": "cross-env NODE_ENV=production PORT=3839 node index.js",
+    "testEnv": "cross-env NODE_ENV=test PORT=3836 node index.js",
+    "prodEnv": "cross-env NODE_ENV=production PORT=3837 node index.js",
     "test": "jest --watchAll --verbose"
   },
   "repository": {
@@ -26,6 +26,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.3.1",
     "mongoose": "^6.1.8",
-    "postman": "^0.2.0"
+    "postman": "^0.2.0",
+    "prompt": "^1.2.1",
+    "prompt-sync": "^4.2.0"
   }
 }

@@ -1,5 +1,9 @@
-# GreenhouseMeasurements
+## GREENHOUSE MEASUREMENTS PROJECT
 
-This is a project I started to update my portfolio as well as help my dad prepare for running the greenhouse we're building.
+# PURPOSE
 
-For those of you interested in the coding structure of this program, it is built in JavaScript using MEAN frameworks.  Initially this will be MongoDB, Express, and Node for the back end, although I hope to add a front end with Angular when I add Angular to my toolbox.
+This project is a personal simulation of developing software for suited specifically for a client's needs. My dad will soon be building a greenhouse for farming and needs software to record and aggregate measurements to be stored in a database.
+
+# LINKS
+
+Postman invite link: https://app.getpostman.com/join-team?invite_code=9b2fbfa9a75a56a87ad99c6b9975180e

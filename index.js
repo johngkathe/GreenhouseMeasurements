@@ -1,14 +1,11 @@
 const express = require('express');
 const app = express();
 
+const dbChoice = require('./startup/dbChoice')()
 require('./startup/routes')(app);
-require('./startup/db')();
-require('./startup/fawn')();
-require('./startup/config')();
+const greenlight = require('./startup/db')(dbChoice, app);
+require('./startup/fawn')(dbChoice);
+const server = require('./startup/config')(dbChoice, app);
 require('./startup/validation')();
 
-const port = process.env.PORT || 3839;
-const server = app.listen(port, () => console.log(`Listening on port ${port}`));
-
-module.exports = server;
-
+require('./operations/modelExplorer')(greenlight);

@@ -1,15 +1,22 @@
 const mongoose = require('mongoose');
-const config = require('config');
+const express = require('express');
+const app = express();
 
-module.exports = function(){
+const Choice = require('../navigation/determineDatabase');
+
+module.exports = function(dbChoice, app){
     try{
         mongoose.connection.close();
-        console.log('Initializing MongoDB connection...');
+        console.log('\nInitializing MongoDB connection...');
     }
     catch(ex){
         console.error('Starting new MongoDB connection...', ex);
     }
+    
+    const { db, dbPath } = Choice(dbChoice);
 
-    mongoose.connect(config.get('db'), { useNewUrlParser: true, useUnifiedTopology: true})
-        .then(() => console.log(`Connected to ${config.get('path')}`));
+    let greenlight = mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true})
+        .then(() => console.log(`Connected to ${dbPath}`))
+
+    return greenlight;
 }

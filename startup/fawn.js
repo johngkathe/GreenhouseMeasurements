@@ -1,6 +1,9 @@
 const Fawn = require('fawn');
-const config = require('config');
+const Choice = require('../navigation/determineDatabase');
 
-module.exports = function(){
-    Fawn.init(config.get('path'));
+module.exports = function(dbChoice){
+
+    const { dbPath } = Choice(dbChoice);
+
+    Fawn.init(dbPath);
 }
